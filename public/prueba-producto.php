@@ -1,7 +1,7 @@
 <?php
 require_once 'Producto.php';
 
-$libro = new Producto("php123", "Apuntes de PHP", 1.75);
+$libro = new Producto("php123", "Apuntes de PHP", -1.75);
 
 echo "<pre>";
 var_dump($libro);
@@ -9,7 +9,7 @@ echo "</pre>";
 $libro2 = $libro;  // Se referencia al mismo objeto.
 
 //$libro->nombre = "Apuntes de PHP";
-//$libro2->precio = 0.99;
+$libro2->setPrecio(0.99);
 
 echo "<pre>";
 var_dump($libro2);
