@@ -2,7 +2,7 @@
 
 require_once 'Producto.php';
 
-class ProductoDigital extends Producto {
+class ProductoDigital extends Producto implements Notificable {
 
     public function __construct(
         string $id,
@@ -17,4 +17,10 @@ class ProductoDigital extends Producto {
         return "Digital";
     }
 
+    public function enviarNotificacion(): string {
+        return sprintf("Puedes descargar el %s en la url: %s",
+                $this->nombre,
+                $this->urlDescarga
+            );
+    }
 }

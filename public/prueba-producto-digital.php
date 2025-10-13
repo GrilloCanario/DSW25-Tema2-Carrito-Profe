@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Producto.php';
+require_once 'Notificable.php';
 require_once 'ProductoDigital.php';
 require_once 'ProductoFisico.php';
 
@@ -16,3 +17,12 @@ echo $apuntesOnline->obtenerInfo();
 $aguacates = new ProductoFisico('cajaAgua', 'Caja de Aguacates', 235.99, 5);
 echo "<hr>";
 echo $aguacates->obtenerDescripcionTipo();
+
+echo "<hr>";
+function procesarNotificacion(Notificable $notificable) {
+    echo $notificable->enviarNotificacion();
+}
+
+procesarNotificacion($aguacates);
+echo "<hr>";
+procesarNotificacion($apuntesOnline);
