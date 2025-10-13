@@ -1,4 +1,6 @@
 <?php
+// ESto ya no funciona porque Producto es abastracto.
+
 require_once 'Producto.php';
 
 $libro = new Producto("php123", "Apuntes de PHP", -1.75);

@@ -1,6 +1,6 @@
 <?php
 
-class Producto {
+abstract class Producto {
     // public string $nombre;
     // public float $precio;
 
@@ -28,5 +28,7 @@ class Producto {
             $this->precio = $nuevoPrecio;
         }
     }
+
+    abstract public function obtenerDescripcionTipo(): string;
 
 }
