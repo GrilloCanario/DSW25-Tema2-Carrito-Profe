@@ -26,3 +26,6 @@ function procesarNotificacion(Notificable $notificable) {
 procesarNotificacion($aguacates);
 echo "<hr>";
 procesarNotificacion($apuntesOnline);
+
+echo "<hr>";
+printf("El número de productos creados es: %d", Producto::obtenerTotalProductos());

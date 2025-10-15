@@ -1,6 +1,8 @@
 <?php
 
 abstract class Producto {
+
+    private static int $contadorProductos = 0;
     // public string $nombre;
     // public float $precio;
 
@@ -14,6 +16,7 @@ abstract class Producto {
         public string $nombre,
         private float $precio
     ) {
+        self::$contadorProductos++;
         $this->setPrecio($precio);
     }
 
@@ -31,4 +34,7 @@ abstract class Producto {
 
     abstract public function obtenerDescripcionTipo(): string;
 
+    public static function obtenerTotalProductos() {
+        return self::$contadorProductos;
+    }
 }
