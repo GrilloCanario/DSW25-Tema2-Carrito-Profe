@@ -2,6 +2,8 @@
 
 abstract class Producto {
 
+    use Registrable;
+
     private static int $contadorProductos = 0;
     // public string $nombre;
     // public float $precio;
@@ -18,6 +20,7 @@ abstract class Producto {
     ) {
         self::$contadorProductos++;
         $this->setPrecio($precio);
+        $this->log("Nuevo producto creado: " . $this->nombre);
     }
 
     public function obtenerInfo(): string {

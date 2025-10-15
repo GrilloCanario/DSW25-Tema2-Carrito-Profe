@@ -1,5 +1,6 @@
 <?php
 
+require_once 'Registrable.php';
 require_once 'Producto.php';
 require_once 'Notificable.php';
 require_once 'ProductoDigital.php';
@@ -29,3 +30,6 @@ procesarNotificacion($apuntesOnline);
 
 echo "<hr>";
 printf("El número de productos creados es: %d", Producto::obtenerTotalProductos());
+
+echo "<hr>";
+$aguacates->log("Esto es un nuevo log");
