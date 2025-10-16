@@ -27,6 +27,9 @@ abstract class Producto {
         return sprintf("Id: %s, Producto: %s, Precio: %.2f€", $this->id, $this->nombre, $this->precio);
     }
 
+    public function getPrecio() {
+        return $this->precio;
+    }
     public function setPrecio(float $nuevoPrecio): void {
         if ($nuevoPrecio < 0) {
             $this->precio = 0;

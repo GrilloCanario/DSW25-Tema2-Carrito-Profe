@@ -8,11 +8,25 @@ enum EstadoPedido: string {
 }
 
 class Pedido {
-    public function __construct(
-        public readonly string $id,
-        public EstadoPedido $estado = EstadoPedido::PENDIENTE
-    ) {
+    public readonly string $id;
+    public EstadoPedido $estado = EstadoPedido::PENDIENTE;
+    private array $lineas = [];
 
+    public function __construct() {
+        $this->id = "pedido-" .uniqid();
+    }
+
+    public function agregarProducto(Producto $producto, int $cantidad): void {
+        $this->lineas[] = new LineaPedido($producto, $cantidad);
+        echo "<p>Se ha añadido una nueva línea con {$producto->nombre} x {$cantidad} </p>";
+    }
+
+    public function calcularTotal(): float {
+        $total = 0.0;
+        foreach($this->lineas as $lineaPedido) {
+            $total += $lineaPedido->calcularSubTotal();
+        }
+        return $total; 
     }
 
     public function textoEstadoPedido() {

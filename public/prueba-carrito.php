@@ -29,7 +29,16 @@ $miCarrito->agregarProducto(
 $miCarrito->mostrarCarrito();
 
 echo "<hr>";
+echo "<pre>";
+var_dump($miCarrito->obtenerProductos());
+echo "</pre>";
 
 echo "<hr>";
+echo "<p>Obtener php8.1</p>";
+$productoBuscado = $miCarrito->obtenerProductoId('php8.1');
+echo "<pre>";
+var_dump($productoBuscado);
+echo "</pre>";
+echo $productoBuscado->nombre;
 
 echo "<hr>";

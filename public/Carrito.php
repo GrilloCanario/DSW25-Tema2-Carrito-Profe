@@ -19,4 +19,17 @@ class Carrito {
         }
         echo "</ul>";
     }
+
+    public function obtenerProductos() {
+        return $this->productos;
+    }
+
+    public function obtenerProductoId(string $id): Producto|null {
+        foreach($this->productos as $producto) {
+            if ($producto->id == $id) {
+                return $producto;
+            }
+        }
+        return null;
+    }
 }
