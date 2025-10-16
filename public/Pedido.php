@@ -11,9 +11,11 @@ class Pedido {
     public readonly string $id;
     public EstadoPedido $estado = EstadoPedido::PENDIENTE;
     private array $lineas = [];
+    public Cliente $cliente;
 
-    public function __construct() {
+    public function __construct(Cliente $cliente) {
         $this->id = "pedido-" .uniqid();
+        $this->cliente = $cliente; 
     }
 
     public function agregarProducto(Producto $producto, int $cantidad): void {
